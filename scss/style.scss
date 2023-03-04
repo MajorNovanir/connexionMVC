@@ -1,0 +1,103 @@
+//imports
+@import './couleurs';
+@import './mixins';
+@import './typo';
+
+//
+body {
+    box-sizing: border-box;
+    background-image: url(../src/img/background1.jpg);
+    background-size: cover;
+    font-family: "marker";
+}
+
+h1 {
+    color: rgb(235, 18, 9);
+    text-align: center;
+    font-size: 3rem;
+    text-shadow: 2px 2px 0 black, 4px 4px 0 #454242;
+}
+
+form {
+    padding: 1rem;
+    width: 35%;
+    margin: auto;
+    background: linear-gradient(180deg, rgba(235, 18, 9, 0.8) 0%, rgba(111, 13, 13, 0.8) 100%);
+    @include flex(flex, center, center, none, wrap);
+    @include border(2px solid black, 1rem, (rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px));
+    h2{
+        width: 90%;
+        text-align: center;
+    }
+
+    label {
+        width: 90%;
+        @include flex(flex, center, center, none, wrap);
+        margin-bottom: 1.5rem;
+
+        p {
+            width: 45%;
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 0 black, 2px 2px 0 #454242;
+        }
+
+        input {
+            width: 40%;
+            height: 1.3rem;
+            @include border(3px solid black, 0.4rem, none);
+font-size: 1rem;
+            border-top: none;
+            outline: none;
+        }
+
+        .error {
+            width: 90%;
+            font-size: 1rem;
+            height: 1rem;
+            text-shadow: none;
+            text-align: center;
+        }
+    }
+    #buttons {
+        @extend %flex_center;
+        gap: 3rem;
+    }
+}
+
+button:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+button {
+    @include border(3px solid black, 1rem, (rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px));
+        font-family: "marker";
+        font-size: 1.5rem;
+        height: 3rem;
+    a {
+        color: black;
+        text-decoration: none;
+    }
+}
+#userInfo{
+    margin-right: 1rem;
+    text-align: right;
+    h2{
+        text-decoration: underline;
+    }
+    color:rgb(235, 18, 9) ;
+    
+}
+#wtf{
+    @extend %flex_column;
+    h1{
+        width: 100%;
+    }
+    img{
+        text-shadow: 2px 2px 0 black, 4px 4px 0 #454242;
+    }
+}
+#disconnect{
+    text-align: right;
+}
+
+

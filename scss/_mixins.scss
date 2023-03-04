@@ -1,0 +1,64 @@
+//gen
+%imgres{
+    max-width: 100%;
+    max-height: 100%;
+}
+%imgfull{
+    width: 100%;
+    height: 100%;
+}
+
+%bloc_page{
+    box-sizing: border-box;
+    width: 100%;
+}
+//flex
+%flex_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+%flex_column{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+//mix
+@mixin bloc_page($box:border-box,$width,$background){
+    box-sizing: $box;
+    width: $width;
+    background:$background;
+}
+@mixin border ($bordere,$radius,$shadow){
+    border: $bordere;
+    border-radius: $radius;
+    box-shadow: $shadow;
+}
+@mixin textbox($family,$size,$weight,$color,$back){
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+    background-color: $back;
+}
+@mixin flex($flex,$content,$align,$gap,$wrap){
+    display: $flex;
+    justify-content:$content;
+    align-items: $align;
+    gap: $gap;
+    flex-wrap: $wrap;  
+}
+@mixin triangle($direction, $color, $size, $position:relative){
+    @if $direction =="left" {border-color: transparent $smoke transparent transparent;
+                            border-width: $size $size $size 0;}
+    @if $direction =="top" {border-color: transparent transparent $smoke transparent;
+                            border-width: 0 $size $size $size ;}
+    @if $direction =="right" {border-color: transparent transparent transparent $smoke;
+                            border-width: $size 0 $size $size ;}
+    @if $direction =="down" {border-color: $smoke transparent transparent transparent;
+                            border-width: $size $size 0 $size ;}
+    border-style: solid ;
+    position: $position;
+}
+
